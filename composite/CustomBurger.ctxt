@@ -1,0 +1,18 @@
+#BlueJ class context
+comment0.params=d
+comment0.target=CustomBurger(java.lang.String)
+comment1.params=
+comment1.target=void\ printDescription()
+comment2.params=
+comment2.target=java.lang.Double\ getPrice()
+comment3.params=
+comment3.target=java.lang.String\ getDescription()
+comment4.params=c
+comment4.target=void\ setPrice(IBurger)
+comment5.params=c
+comment5.target=void\ addChild(IBurger)
+comment6.params=c
+comment6.target=void\ removeChild(IBurger)
+comment7.params=i
+comment7.target=IBurger\ getChild(int)
+numComments=8

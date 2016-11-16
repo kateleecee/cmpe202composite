@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.params=d\ _d1\ _d2
+comment0.target=Burger(java.lang.String,\ java.lang.String,\ java.lang.String)
+comment0.text=\n\ Constructor\ for\ objects\ of\ class\ Burger\n
+comment1.params=
+comment1.target=void\ printDescription()
+comment2.params=
+comment2.target=java.lang.Double\ getPrice()
+comment3.params=
+comment3.target=java.lang.String\ getDescription()
+comment4.params=c
+comment4.target=void\ addChild(Component)
+comment5.params=c
+comment5.target=void\ removeChild(Component)
+comment6.params=i
+comment6.target=Component\ getChild(int)
+numComments=7
