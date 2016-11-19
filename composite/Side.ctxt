@@ -1,11 +1,11 @@
 #BlueJ class context
 comment0.params=b\ strs
-comment0.target=Topping(IBurger,\ java.lang.String[])
-comment0.text=\n\ Constructor\ for\ objects\ of\ class\ Cheese\n
+comment0.target=Side(IBurger,\ java.lang.String[])
+comment0.text=\n\ Constructor\ for\ objects\ of\ class\ Side\n
 comment1.params=
-comment1.target=void\ printDescription()
+comment1.target=java.lang.Double\ getPrice()
 comment2.params=
-comment2.target=java.lang.Double\ getPrice()
+comment2.target=void\ printDescription()
 comment3.params=c
 comment3.target=void\ addChild(Component)
 comment4.params=c
