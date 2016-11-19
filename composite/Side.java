@@ -1,43 +1,29 @@
 
 /**
- * Write a description of class PremiumTopping here.
+ * Write a description of class Side here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class PremiumTopping extends IBurger
+public class Side extends IBurger
 {
     private String description = "";
     private Double price = 0.00;
     private IBurger burger;
     private String[] selected;
     private String[] options = {
-        "Sunny Side Up Egg*",
-        "Marinated Artichokes",
-        "Olive Tapenade",
-        "Fried Pickle Chips",
-        "Black Forest Ham",
-        "Grilled Anaheim Peppers",
-        "Crispy Onion Strings",
-        "Sauteed Mushrooms",
-        "Housemade Turkey Chili",
-        "Grilled Red Onion",
-        "Housemade Guacamole",
-        "Applewood Smoked Bacon",
-        "Oven Roasted Tomatoes",
-        "Sliced Avocado",
-        "Sun-Dried Tomatoes",
-        "Smoked Pickled Jalapenos",
-        "Housemade Chili"
-    };
-    private String[] specialOptions = {
-        "Marinated Tomatoes"
+        "Shoestring Fries",
+        "Grilled Vegetable Skewers 2pcs",
+        "Lettuce Blend Side Salad",
+        "Coleslaw",
+        "Sweet Potato Fries",
+        "Onion Strings"
     };
 
     /**
-     * Constructor for objects of class Cheese
+     * Constructor for objects of class Side
      */
-    public PremiumTopping(IBurger b, String[] strs)
+    public Side(IBurger b, String[] strs)
     {
         burger = b;
         this.selected = strs;
@@ -48,13 +34,16 @@ public class PremiumTopping extends IBurger
         this.description = description.substring(3);
         this.price = getPrice();
     }
-    
+
     public Double getPrice()
     {
         int count = 0;
-        int spe_count = 0;
             for(String str: selected)
             {
+                if(str.equals("No Side"))
+                {
+                    return burger.getPrice();
+                }
                 for(String option: options)
                 {
                     if(str.equals(option))
@@ -62,19 +51,12 @@ public class PremiumTopping extends IBurger
                         count += 1;
                     }
                 }
-                for(String option: specialOptions)
-                {
-                    if(str.equals(option))
-                    {
-                        spe_count += 1;
-                    }
-                }
             }
-            if((count+spe_count) != selected.length)
+            if((count) != selected.length)
         {
             System.out.println("No Such Order");
         }
-                this.price = burger.getPrice() + count + spe_count * 2.00;
+                this.price = burger.getPrice() + count * 3.00;
         return this.price;
     }
     

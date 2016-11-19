@@ -1,32 +1,32 @@
 
 /**
- * Write a description of class Cheese here.
+ * Write a description of class PremiumCheese here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Cheese extends IBurger
+public class PremiumCheese extends IBurger
 {
     // instance variables - replace the example below with your own
     private String description = "";
     private Double price = 0.00;
     private IBurger burger;
     private String[] options = {
-        "Yellow American",
-        "Sharp Provolone",
-        "Horseradish Cheddar",
-        "Spicy Jalapeno Jack",
-        "Savory Swiss",
-        "Smoked Gouda",
-        "Greek Feta",
-        "Tillamook Cheddar"
+        "Danish Blue Cheese",
+        "Fresh Mozzarella",
+        "Gruyere",
+        "Soft-Ripened Brie",
+        "Vegan Cheddar",
+        "Manchego",
+        "Herbed Goat Cheese",
+        "Spread"
     };
     private String[] selected;
 
     /**
-     * Constructor for objects of class Cheese
+     * Constructor for objects of class PremiumCheese
      */
-    public Cheese(IBurger b, String[] strs)
+    public PremiumCheese(IBurger b, String[] strs)
     {
         burger = b;
         this.selected = strs;
@@ -51,20 +51,14 @@ public class Cheese extends IBurger
                     }
                 }
             }
-            if(count >= 1)
-            {
-                this.price = burger.getPrice() + count - 1;
-            }
-            else{
-                this.price = burger.getPrice();
-            }
             if(count != selected.length)
-            {
+        {
             System.out.println("No Such Order");
         }
+            this.price = burger.getPrice() + count * 1.50;
         return this.price;
     }
-
+    
     public void printDescription()
     {
         System.out.println(this.description);

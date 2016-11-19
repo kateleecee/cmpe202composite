@@ -6,7 +6,7 @@ import java.text.DecimalFormat;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class CustomBurger extends IBurger
+public class CustomBurger implements Component
 {
     ArrayList<IBurger> components = new ArrayList<IBurger>() ;
     String description;
@@ -17,43 +17,21 @@ public class CustomBurger extends IBurger
     }
     public void printDescription() {
         DecimalFormat fmt = new DecimalFormat("0.00");
-        System.out.println( description + " " + fmt.format(price) ) ;
+        System.out.println( description + " " + fmt.format(getPrice()) ) ;
         String str = "";
         for (IBurger obj  : components)
         {
-            if(!str.contains(obj.getDescription())){
-            str += obj.getDescription();}
-            for(int i = 0; i<components.size(); i++)
-            {
-                if(obj.getClass().getSimpleName().toString().equals(getChild(i).getClass().getSimpleName().toString()))
-                {
-                    if(!str.contains(getChild(i).getDescription()))
-                    {
-                        str += " + " + getChild(i).getDescription();
-                        
-                    }
-                }
-            }
-            if(!str.endsWith("\n"))
-            {
-                str+="\n";
-            }
+            obj.printDescription();
         } 
-        System.out.println(str) ;
     }
     
     public Double getPrice()
     {
-        return this.price;
-    }
-    
-    public String getDescription(){
-        return this.description;
-    }
-    
-    public void setPrice(IBurger c)
-    {
-        price = c.getPrice();
+        if(!components.isEmpty())
+        {
+            return components.get(components.size() - 1).getPrice();
+        }
+        return 0.00;
     }
     
     public void addChild(IBurger c) {

@@ -8,5 +8,4 @@
 public abstract class IBurger implements Component
 {
     public abstract Double getPrice();
-    public abstract String getDescription();
 }
